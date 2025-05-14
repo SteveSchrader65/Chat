@@ -61,9 +61,8 @@ const ChatContainer = () => {
       <ChatHeader />
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message, index) => {
-          const senderIdStr = message.senderId?._id ? message.senderId._id.toString() : ""
-          const authUserIdStr = authUser?._id ? authUser._id.toString() : ""
-          const isCurrentUser = senderIdStr === authUserIdStr
+          const senderId = message.senderId?._id || message.senderId
+          const isCurrentUser = senderId === authUser?._id
           const isLastMessage = index === messages.length - 1
           const prev = index > 0 ? messages[index - 1] : null
           const showSeparator = prev && isNewday(message.createdAt, prev.createdAt)
@@ -97,8 +96,10 @@ const ChatContainer = () => {
                 <div className="chat-header mb-1">
                   <time className="text-xs opacity-50 ml-1">
                     {formatMessageTime(message.createdAt)}
-                    {!isCurrentUser && " " + message.senderId.userName}
-                    {/* {!isCurrentUser && " " + authUser.userName} */}
+                    {!isCurrentUser && " " +
+                      (typeof message.senderId === "object"
+                        ? message.senderId.userName
+                        : selectedUser.userName)}
                   </time>
                 </div>
                 <div className="chat-bubble flex flex-col">
