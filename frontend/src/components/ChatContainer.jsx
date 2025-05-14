@@ -61,10 +61,9 @@ const ChatContainer = () => {
       <ChatHeader />
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message, index) => {
-          // const isCurrentUser = message.senderId?._id.toString() === authUser?._id.toString()
-          // const senderIdStr = message.senderId?._id ? message.senderId._id.toString() : ""
-          // const authUserIdStr = authUser?._id ? authUser._id.toString() : ""
-          // const isCurrentUser = senderIdStr === authUserIdStr
+          const senderIdStr = message.senderId?._id ? message.senderId._id.toString() : ""
+          const authUserIdStr = authUser?._id ? authUser._id.toString() : ""
+          const isCurrentUser = senderIdStr === authUserIdStr
           const isLastMessage = index === messages.length - 1
           const prev = index > 0 ? messages[index - 1] : null
           const showSeparator = prev && isNewday(message.createdAt, prev.createdAt)
@@ -81,13 +80,13 @@ const ChatContainer = () => {
                 </div>
               )}
               <div
-                className={`chat ${message.senderId === authUser._id ? "chat-end" : "chat-start"}`}
+                className={`chat ${isCurrentUser ? "chat-end" : "chat-start"}`}
                 ref={isLastMessage ? messageRef : null}>
                 <div className=" chat-image avatar">
                   <div className="size-10 rounded-full border">
                     <img
                       src={
-                        message.senderId === authUser._id
+                        isCurrentUser
                           ? authUser.profilePic || "/avatar.png"
                           : selectedUser.profilePic || "/avatar.png"
                       }
@@ -98,7 +97,7 @@ const ChatContainer = () => {
                 <div className="chat-header mb-1">
                   <time className="text-xs opacity-50 ml-1">
                     {formatMessageTime(message.createdAt)}
-                    {/* {!isCurrentUser && " " + message.senderId.userName} */}
+                    {!isCurrentUser && " " + authUser.userName}
                   </time>
                 </div>
                 <div className="chat-bubble flex flex-col">
@@ -133,7 +132,7 @@ const ChatContainer = () => {
       </div>
       {typingUser && (
         <div className="px-4 pb-2 text-xs text-zinc-400 animate-pulse">
-          {typingUser} is typing...
+          {typingUser} is typing ...
         </div>
       )}
       <MessageInput />
