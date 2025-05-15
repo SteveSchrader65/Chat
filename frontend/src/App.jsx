@@ -12,7 +12,7 @@ import SettingsPage from "./pages/SettingsPage"
 import ProfilePage from "./pages/ProfilePage"
 
 const App = () => {
-  const {authUser, checkAuth, isCheckingAuth /*, onlineUsers*/} = useAuth()
+  const {authUser, checkAuth, isCheckingAuth} = useAuth()
   const {theme} = useTheme()
   const location = useLocation()
   const currentPath = location.pathname

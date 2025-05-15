@@ -96,10 +96,7 @@ const ChatContainer = () => {
                 <div className="chat-header mb-1">
                   <time className="text-xs opacity-50 ml-1">
                     {formatMessageTime(message.createdAt)}
-                    {!isCurrentUser && " " +
-                      (typeof message.senderId === "object"
-                        ? message.senderId.userName
-                        : selectedUser.userName)}
+                    {!isCurrentUser && " " + selectedUser.userName}
                   </time>
                 </div>
                 <div className="chat-bubble flex flex-col">

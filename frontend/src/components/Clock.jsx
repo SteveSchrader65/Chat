@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react"
-import AnalogClock from "analog-clock-react"
-// import Clockwork from "./clockCodeRip/clockwork.jsx"
+import Clockwork from "./clockCodeRip/clockwork.jsx"
 
 function getRoundedTime(timeZone) {
   const now = new Date()
@@ -57,8 +56,8 @@ const Clock = ({timeZone, label}) => {
 
   return (
     <div className="flex flex-col items-center mx-1">
-      <AnalogClock {...options} />
-      {/* <Clockwork {...options} /> */}
+      {/* <AnalogClock {...options} /> */}
+      <Clockwork {...options} />
       <span className="text-xs mt-1">{label}</span>
     </div>
   )
