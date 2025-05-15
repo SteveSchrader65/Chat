@@ -18,7 +18,10 @@ export const useChat = create((set, get) => ({
 
     if (!authUser || get().socket) return
 
-    const socket = io("http://localhost:5180", {
+    // const socket = io("http://localhost:5180", {
+    //   query: {userId: authUser._id, userName: authUser.userName},
+    // })
+    const socket = io("https://chatterbox-08vk.onrender.com/", {
       query: {userId: authUser._id, userName: authUser.userName},
     })
 

@@ -7,7 +7,11 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173",
+      "https://chatterbox-08vk.onrender.com",
+    ],
+    credentials: true,
   },
 })
 
@@ -21,7 +25,7 @@ io.on("connection", (socket) => {
   const userId = socket.handshake.query.userId
 
   if (userId) userSocketMap[userId] = socket.id
-  console.log("A user connected", socket.id)
+  console.log("A user disconnected", socket.id)
 
   io.emit("getOnlineUsers", Object.keys(userSocketMap))
 
