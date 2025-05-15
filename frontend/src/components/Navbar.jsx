@@ -29,8 +29,11 @@ const Navbar = () => {
                 <User className="size-5" />
                 <span className="hidden sm:inline">Profile</span>
               </Link>
-              <div className="ml-20">
+              <div className="ml-16">
                 <Clock timeZone="America/Santiago" label="Santiago" />
+              </div>
+              <div className="ml-4">
+                <Clock timeZone="CET" label="Berlin" />
               </div>
             </div>
           )}
