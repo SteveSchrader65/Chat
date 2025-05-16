@@ -109,7 +109,15 @@ const ChatContainer = () => {
                     />
                   )}
                   <div className="whitespace-pre-line">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        a: ({href, children, ...props}) => (
+                          <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+                            {children}
+                          </a>
+                        ),
+                      }}>
                       {message.text}
                     </ReactMarkdown>
                   </div>
