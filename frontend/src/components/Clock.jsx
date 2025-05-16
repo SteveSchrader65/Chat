@@ -115,7 +115,7 @@ export const Clock = ({timeZone, label}) => {
       <ClockStyle />
       <div className="flex flex-col items-center mx-1">
         <Clockwork hours={clockTime.hours} minutes={clockTime.minutes} />
-        <span className="text-xs">{label}</span>
+        <span className="text-xs mt-1.5">{label}</span>
       </div>
     </>
   )

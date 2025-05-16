@@ -4,7 +4,7 @@ import {useTheme} from "../hooks/useTheme"
 import AuthImagePattern from "../components/AuthImagePattern"
 import {Link} from "react-router-dom"
 import {Eye, EyeOff, Loader2, Lock, Mail, MessageSquare} from "lucide-react"
-import useLoginSound from "../hooks/useLoginSound"
+// import useLoginSound from "../hooks/useLoginSound"
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -15,13 +15,13 @@ const LoginPage = () => {
   })
 
   const {login, isLoggingIn} = useAuth()
-  const playLoginSound = useLoginSound()
+  // const playLoginSound = useLoginSound()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    playLoginSound()
     login(formData)
+    // playLoginSound()
   }
 
   return (
@@ -109,6 +109,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+
       {/* Right Side - Image/Pattern */}
       <AuthImagePattern title="Connect with friends, share moments, and stay in touch" />{" "}
     </div>
