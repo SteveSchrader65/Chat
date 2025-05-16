@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 import {useAuth} from "../hooks/useAuth"
 import {LogOut, MessageSquare, Settings, User} from "lucide-react"
-import Clock from "../components/Clock.jsx"
+import {Clock} from "../components/Clock.jsx"
 
 const Navbar = () => {
   const {logout, authUser} = useAuth()
