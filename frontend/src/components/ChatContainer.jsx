@@ -1,5 +1,6 @@
 import {useEffect, useRef} from "react"
-import Linkify from "react-linkify"
+import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 import {useChat} from "../hooks/useChat"
 import {useAuth} from "../hooks/useAuth"
 import {useFontsizer} from "../hooks/useFontsizer"
@@ -108,19 +109,9 @@ const ChatContainer = () => {
                     />
                   )}
                   <div className="whitespace-pre-line">
-                    <Linkify
-                      componentDecorator={(decoratedHref, decoratedText, key) => (
-                        <a
-                          href={decoratedHref}
-                          key={key}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-inherit underline">
-                          {decoratedText}
-                        </a>
-                      )}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {message.text}
-                    </Linkify>
+                    </ReactMarkdown>
                   </div>
                 </div>
               </div>
