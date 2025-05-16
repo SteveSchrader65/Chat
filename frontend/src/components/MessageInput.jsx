@@ -104,7 +104,7 @@ const MessageInput = () => {
       )}
       <div className="mb-2 text-xs text-zinc-500">
         💡 To share code, wrap with triple backticks:
-        <span className="font-mono bg-zinc-100 px-1 py-0.5 rounded">```</span>
+        <span className="font-mono px-1 py-0.5 rounded">```</span>
       </div>
       <form
         onSubmit={(e) => {
