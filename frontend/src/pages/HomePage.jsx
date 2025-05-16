@@ -11,8 +11,6 @@ const HomePage = () => {
   const {selectedUser} = useChat()
   const {onlineUsers} = useAuth()
 
-  // if (!users || !authUser) return <LoadingSpinner />
-
   return (
     <div data-theme={theme} className="min-h-screen bg-base-200">
       <OnlineUserNotifier onlineUsers={onlineUsers} />
