@@ -1,10 +1,9 @@
-pending: Add code-blocking to MessageInput.jsx
-
 FEATURES
 Modified password change functionality
 Added fontSizer input to Settings
-Can include LINKS in messages
-Can send multiline messages (SHFT-ENTER)
+Added ability to highlight links in messages
+Added ability to send multiline messages (SHFT-ENTER)
 Added "xxx is typing" messages
+Added code-blocking capability for messages
 Clocks with shaded faces for hours between 6pm and 6am
 Sound effect when users log-in IF window is unfocused/minimized
