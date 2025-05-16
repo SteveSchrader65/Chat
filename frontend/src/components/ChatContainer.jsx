@@ -113,7 +113,12 @@ const ChatContainer = () => {
                       remarkPlugins={[remarkGfm]}
                       components={{
                         a: ({href, children, ...props}) => (
-                          <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline text-blue-500 hover:text-blue-600"
+                            {...props}>
                             {children}
                           </a>
                         ),
