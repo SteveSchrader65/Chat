@@ -4,7 +4,6 @@ import {useTheme} from "../hooks/useTheme"
 import {Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User} from "lucide-react"
 import {Link} from "react-router-dom"
 import AuthImagePattern from "../components/AuthImagePattern"
-// import useLoginSound from "../hooks/useLoginSound"
 import toast from "react-hot-toast"
 
 const SignUpPage = () => {
@@ -17,7 +16,6 @@ const SignUpPage = () => {
   })
 
   const {signup, isSigningUp} = useAuth()
-  // const playLoginSound = useLoginSound()
 
   const validateForm = () => {
     if (!formData.userName.trim()) return toast.error("Full name is required")
@@ -41,15 +39,16 @@ const SignUpPage = () => {
       }
 
       signup(userData)
-      // playLoginSound()
     }
   }
 
   return (
     <div data-theme={theme} className="min-h-screen grid lg:grid-cols-2">
+
       {/* left side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
+
           {/* Logo */}
           <div className="text-center">
             <div className="flex flex-col items-center gap-2 group">
