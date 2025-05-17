@@ -2,7 +2,7 @@
 import useSound from 'use-sound'
 
 export default function useLoginSound() {
-  const [play] = useSound('/doorKnock.mp3', { volume: 0.2 })
+  const [play] = useSound('/doorKnock.mp3', { volume: 0.4 })
 
   const playUnfocused = () => {
     if (!document.hasFocus() || document.visibilityState === 'hidden') {
