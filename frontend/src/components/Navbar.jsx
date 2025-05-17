@@ -30,7 +30,7 @@ const Navbar = () => {
                 <span className="hidden sm:inline">Profile</span>
               </Link>
               <div className="ml-16">
-                <Clock timeZone="America/Santiago" label="Santiago" />
+                <Clock timeZone="America/Los_Angeles" label="US West" />
               </div>
               <div className="ml-4">
                 <Clock timeZone="CET" label="Berlin" />
