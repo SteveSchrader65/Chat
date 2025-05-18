@@ -1,3 +1,6 @@
+ISSUES
+Navbar not responsive
+
 FEATURES
 Modified password change functionality
 Added fontSizer input to Settings
